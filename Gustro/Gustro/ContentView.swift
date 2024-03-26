@@ -21,13 +21,31 @@ struct ContentView: View {
                     NavigationLink(value: restrant) {
                         VStack(alignment: .leading) {
                             Text(restrant.name)
-                            Text("\(restrant.priceRating)")
-                            Text("\(restrant.qualityRating)")
-                            Text("\(restrant.speedRating)")
+                            Spacer(minLength: 10)
+                            VStack(alignment: .leading, spacing: 10) {
+                                HStack {
+                                    ForEach(0..<restrant.priceRating, id: \.self) { _ in
+                                        Image(systemName: "star.fill")
+                                    }
+                                }
+                                HStack {
+                                    ForEach(0..<restrant.qualityRating, id: \.self) { _ in
+                                        Image(systemName: "star.fill")
+                                    }
+                                }
+                                HStack {
+                                    ForEach(0..<restrant.speedRating, id: \.self) { _ in
+                                        Image(systemName: "star.fill")
+                                    }
+                                }
+                                
+                                
+                            }
+                            Spacer(minLength: 10)
                             Text("**平均: \(restrant.average)**")
                         }
                     }
-       
+                    
                 }.onDelete(perform: deleteRestrant)
             }
             .navigationTitle("レストラン")

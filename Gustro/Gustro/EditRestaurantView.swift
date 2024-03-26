@@ -10,12 +10,33 @@ import SwiftUI
 
 
 struct EditRestaurantView: View {
-   
+    
     @Bindable var restaurant: Restaurant
     
     var body: some View {
         Form {
             TextField("Name of Restaurant", text: $restaurant.name)
+            Section("Rating") {
+                VStack(alignment: .leading, spacing: 10) {
+                    HStack {
+                        ForEach(0..<restaurant.priceRating, id: \.self) { _ in
+                            Image(systemName: "star.fill")
+                        }
+                    }
+                    HStack {
+                        ForEach(0..<restaurant.qualityRating, id: \.self) { _ in
+                            Image(systemName: "star.fill")
+                        }
+                    }
+                    HStack {
+                        ForEach(0..<restaurant.speedRating, id: \.self) { _ in
+                            Image(systemName: "star.fill")
+                        }
+                    }
+                    
+                    
+                }
+            }
         }
     }
 }
