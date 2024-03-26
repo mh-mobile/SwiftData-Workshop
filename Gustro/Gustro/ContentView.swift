@@ -6,15 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
     
     @Environment(\.modelContext) var modelContext
+    @Query var restrants: [Restaurant]
+    
     var body: some View {
         NavigationStack {
             List {
-                VStack {
-                    Text("hoge")
+                ForEach(restrants) { restrant in
+                    VStack(alignment: .leading) {
+                        Text(restrant.name)
+                        Text("\(restrant.priceRating)")
+                        Text("\(restrant.qualityRating)")
+                        Text("\(restrant.speedRating)")
+                    }
                 }
             }
             .navigationTitle("レストラン")
