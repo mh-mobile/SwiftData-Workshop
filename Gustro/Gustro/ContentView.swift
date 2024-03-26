@@ -12,9 +12,10 @@ struct ContentView: View {
     
     @Environment(\.modelContext) var modelContext
     @Query(sort: \Restaurant.name) var restrants: [Restaurant]
+    @State private var navigationPath = NavigationPath()
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath) {
             List {
                 ForEach(restrants) { restrant in
                     NavigationLink(value: restrant) {
@@ -34,10 +35,20 @@ struct ContentView: View {
                 ToolbarItem {
                     Button("add", systemImage: "plus", action: addItems)
                 }
+                ToolbarItem {
+                    Button(action: {
+                        let newRestaurant = Restaurant(name: "new resaurant", priceRating: 0, qualityRating: 0, speedRating: 0)
+                        modelContext.insert(newRestaurant)
+                        navigationPath.append(newRestaurant)
+                    }) {
+                        Label("追加", systemImage: "minus")
+                    }
+                }
             }
             .navigationDestination(for: Restaurant.self) { restaurant in
                 EditRestaurantView(restaurant: restaurant)
             }
+            
         }
     }
     
