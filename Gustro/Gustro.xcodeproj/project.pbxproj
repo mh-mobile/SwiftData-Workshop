@@ -12,6 +12,7 @@
 		EC994CF62BB293AF0072F032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC994CF52BB293AF0072F032 /* Assets.xcassets */; };
 		EC994CF92BB293AF0072F032 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC994CF82BB293AF0072F032 /* Preview Assets.xcassets */; };
 		EC994D002BB293F90072F032 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC994CFF2BB293F90072F032 /* Restaurant.swift */; };
+		EC994D022BB2A8320072F032 /* EditRestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC994D012BB2A8320072F032 /* EditRestaurantView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		EC994CF52BB293AF0072F032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC994CF82BB293AF0072F032 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EC994CFF2BB293F90072F032 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		EC994D012BB2A8320072F032 /* EditRestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRestaurantView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				EC994CFF2BB293F90072F032 /* Restaurant.swift */,
 				EC994CF52BB293AF0072F032 /* Assets.xcassets */,
 				EC994CF72BB293AF0072F032 /* Preview Content */,
+				EC994D012BB2A8320072F032 /* EditRestaurantView.swift */,
 			);
 			path = Gustro;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC994CF42BB293AE0072F032 /* ContentView.swift in Sources */,
+				EC994D022BB2A8320072F032 /* EditRestaurantView.swift in Sources */,
 				EC994CF22BB293AE0072F032 /* GustroApp.swift in Sources */,
 				EC994D002BB293F90072F032 /* Restaurant.swift in Sources */,
 			);

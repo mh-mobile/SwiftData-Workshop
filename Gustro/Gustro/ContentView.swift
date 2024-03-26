@@ -17,13 +17,16 @@ struct ContentView: View {
         NavigationStack {
             List {
                 ForEach(restrants) { restrant in
-                    VStack(alignment: .leading) {
-                        Text(restrant.name)
-                        Text("\(restrant.priceRating)")
-                        Text("\(restrant.qualityRating)")
-                        Text("\(restrant.speedRating)")
-                        Text("**平均: \(restrant.average)**")
+                    NavigationLink(value: restrant) {
+                        VStack(alignment: .leading) {
+                            Text(restrant.name)
+                            Text("\(restrant.priceRating)")
+                            Text("\(restrant.qualityRating)")
+                            Text("\(restrant.speedRating)")
+                            Text("**平均: \(restrant.average)**")
+                        }
                     }
+       
                 }.onDelete(perform: deleteRestrant)
             }
             .navigationTitle("レストラン")
@@ -31,6 +34,9 @@ struct ContentView: View {
                 ToolbarItem {
                     Button("add", systemImage: "plus", action: addItems)
                 }
+            }
+            .navigationDestination(for: Restaurant.self) { restaurant in
+                EditRestaurantView(restaurant: restaurant)
             }
         }
     }
