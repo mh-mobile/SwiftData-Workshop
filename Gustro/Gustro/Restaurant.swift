@@ -17,7 +17,7 @@ class Restaurant {
         self.speedRating = speedRating
     }
     
-    @Attribute(.unique) var name: String
+    var name: String
     var priceRating: Int
     var qualityRating: Int
     var speedRating: Int
