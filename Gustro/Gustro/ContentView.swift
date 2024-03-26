@@ -24,7 +24,7 @@ struct ContentView: View {
                         Text("\(restrant.speedRating)")
                         Text("**平均: \(restrant.average)**")
                     }
-                }
+                }.onDelete(perform: deleteRestrant)
             }
             .navigationTitle("レストラン")
             .toolbar {
@@ -47,6 +47,13 @@ struct ContentView: View {
         for name in names {
             let item = Restaurant(name: name, priceRating: 2, qualityRating: 3, speedRating: 4)
             modelContext.insert(item)
+        }
+    }
+    
+    func deleteRestrant(indexSet: IndexSet) {
+        for index in indexSet {
+            let object = restrants[index]
+            modelContext.delete(object)
         }
     }
 }
