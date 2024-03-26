@@ -11,7 +11,7 @@ import SwiftData
 struct ContentView: View {
     
     @Environment(\.modelContext) var modelContext
-    @Query var restrants: [Restaurant]
+    @Query(sort: \Restaurant.name) var restrants: [Restaurant]
     
     var body: some View {
         NavigationStack {
