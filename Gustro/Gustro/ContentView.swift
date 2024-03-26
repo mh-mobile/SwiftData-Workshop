@@ -22,6 +22,7 @@ struct ContentView: View {
                         Text("\(restrant.priceRating)")
                         Text("\(restrant.qualityRating)")
                         Text("\(restrant.speedRating)")
+                        Text("**平均: \(restrant.average)**")
                     }
                 }
             }

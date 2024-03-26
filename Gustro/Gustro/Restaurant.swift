@@ -17,8 +17,11 @@ class Restaurant {
         self.speedRating = speedRating
     }
     
-    var name: String
+    @Attribute(.unique) var name: String
     var priceRating: Int
     var qualityRating: Int
     var speedRating: Int
+    var average: Float {
+        return Float(qualityRating + speedRating + priceRating) / 3
+    }
 }
